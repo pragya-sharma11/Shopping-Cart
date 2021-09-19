@@ -1,9 +1,9 @@
-function fetch(done){
-    $.get('/api/products', (data)=>{
+function fetchProducts(done){
+    $.get('/api/products', (data)=>{   //get the array of all products
         done(data);
     })
 }
-function createProduct(product){
+function createProductCard(product){
     return $(`
     <div class='col-4 card mx-2 p-2'>
         <h4 class="product-name">${product.name}</h4>
@@ -15,3 +15,14 @@ function createProduct(product){
     </div>
     `)
 }
+
+$(function(){
+    let productList = $('#product-list')
+
+    fetchProducts((products)=>{
+        productList.empty()
+        for(product of products){
+            productList.append(createProductCard(product))
+        }
+    })
+})
