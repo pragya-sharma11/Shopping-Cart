@@ -20,7 +20,7 @@ const User= db.define('users',{
     }
 })
 
-const Product = db.defin('products',{
+const Product = db.define('products',{
     id:{
         type:Sequelize.INTEGER,
         autoIncrement:true,
