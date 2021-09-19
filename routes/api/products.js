@@ -13,6 +13,16 @@ route.get('/',(req,res)=>{
 })
 
 route.exports('/',(req,res)=>{
+    //validate the value
+    /**
+     * NaN == Nan -> false
+     * that's why we have a function -> isNaN(y)  -> true means y is not a number.
+     */
+    if(isNaN(req.body.price)){
+        return res.status(403).send({
+            error:"Price is not a valid number"
+        })
+    }
     //Add a new product
     Product.create({
         name:req.body.name,
