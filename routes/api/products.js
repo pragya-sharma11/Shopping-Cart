@@ -12,7 +12,7 @@ route.get('/',(req,res)=>{
     })
 })
 
-route.exports('/',(req,res)=>{
+route.post('/',(req,res)=>{
     //validate the value
     /**
      * NaN == Nan -> false

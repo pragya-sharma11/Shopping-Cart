@@ -19,7 +19,7 @@ route.get('/',(req,res)=>{
     })
 })
 
-route.exports('/',(req,res)=>{
+route.post('/',(req,res)=>{
     User.create({
         name:req.body.name
     }).then((user)=>{
