@@ -38,6 +38,12 @@ const Product = db.defin('products',{
     }
 })
 
+db.sync().then(()=>{
+    console.log("db has been created")
+}).catch(()=>{
+    console.log("Error occured")
+})
+
 exports=module.exports={
     User, Product
 }
