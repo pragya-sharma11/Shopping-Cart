@@ -4,6 +4,15 @@ $(()=>{
             done(data);
         })
     }
+    function addProduct( name, manuf, price, done){
+        $.post('/api/product',{
+            name:name,
+            manufacturer:mauf,
+            price:price
+        }, function(data){
+            done(data)
+        })
+    }
     function createProductCard(product){
         return $(`
         <div class='col-4 card mx-2 p-2'>
