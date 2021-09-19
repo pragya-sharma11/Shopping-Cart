@@ -1,3 +1,4 @@
+$(()=>{
 function fetchProducts(done){
     $.get('/api/products', (data)=>{   //get the array of all products
         done(data);
@@ -25,4 +26,5 @@ $(function(){
             productList.append(createProductCard(product))
         }
     })
+})
 })
