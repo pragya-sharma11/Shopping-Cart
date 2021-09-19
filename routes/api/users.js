@@ -11,13 +11,18 @@ route.get('/',(req,res)=>{
      */
     User.findAll()
     .then((users)=>{
-
+        res.status(200).send(users)
     }).catch((err)=>{
-        res.status(500).send(()=>{
+        res.status(500).send({
             error:"could not find the users."
         })
     })
 })
+
+route.exports('/',(req,res)=>{
+    
+})
+
 
 exports = module.exports ={
     route
