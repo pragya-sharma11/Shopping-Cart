@@ -14,6 +14,13 @@ route.get('/',(req,res)=>{
 
 route.exports('/',(req,res)=>{
     //post all products to db.
+    Product.create().then((product)=>{
+        res.status(201).send(product)
+    }).catch(()=>{
+        res.status(501).send({
+            error:"Unable to upload a product"
+        })
+    })
 })
 
 
