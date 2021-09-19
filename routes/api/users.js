@@ -22,7 +22,7 @@ route.get('/',(req,res)=>{
 route.exports('/',(req,res)=>{
     User.create({
         name:req.body.name
-    }).then(()=>{
+    }).then((user)=>{
         res.status(201).send(user)
     }).catch(()=>{
         res.send(501).send({
