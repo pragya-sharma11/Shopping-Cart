@@ -23,9 +23,9 @@ route.exports('/',(req,res)=>{
     User.create({
         name:req.body.name
     }).then(()=>{
-        res.status(200).send(user)
+        res.status(201).send(user)
     }).catch(()=>{
-        res.send(404).send({
+        res.send(501).send({
             error:'Unable to create users'
         })
     })
