@@ -37,3 +37,7 @@ const Product = db.defin('products',{
         default:0.0
     }
 })
+
+exports=module.exports={
+    User, Product
+}
