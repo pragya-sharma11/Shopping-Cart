@@ -13,8 +13,12 @@ route.get('/',(req,res)=>{
 })
 
 route.exports('/',(req,res)=>{
-    //post all products to db.
-    Product.create().then((product)=>{
+    //Add a new product
+    Product.create({
+        name:req.body.name,
+        manufacturer : req.body.manufacturer,
+        price:parseFloat(req.body.price)
+    }).then((product)=>{
         res.status(201).send(product)
     }).catch(()=>{
         res.status(501).send({
